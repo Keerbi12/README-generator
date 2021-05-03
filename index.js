@@ -1,5 +1,4 @@
 /* Run the npm init -y then installed inquirer, npm i inquirer. */
-
 const inquirer = require('inquirer');
 const fs = require('fs');
 
