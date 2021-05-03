@@ -51,7 +51,7 @@ const questions = [
         name: "questions",
         message: "Questions on the project:"
     }
-];
+]
 
 // prompt which gets the array of objects (questions) stored within the "const questions".  
 inquirer.prompt(
@@ -59,15 +59,17 @@ inquirer.prompt(
 )
 .then(
     function start(connect) {
-        console.log("Inputs recieved")
-        writeToFile(connect)
+        console.log("Inputs recieved");
+        writeToFile(connect);
     }
 )
-.catch((err) => {console.log(err);})
+.catch((err) => {console.log(err)})
 
 
 // TODO: Create a function to write README file
 function writeToFile(input) {
+// Created variable for the creation of the README page
+    let readMeBlank;
 // Created variables for each of the headings.
     let readMeTitle;
     let readMeDescription;
@@ -88,11 +90,14 @@ function writeToFile(input) {
     const testsDisplay = "## Test instructions";
     const questionsDisplay = "## Questions";
 
+// Using an if statement to add the title as the user input or "Insert title here!"
     if (input.title == "") {
-        console.log("No input detected!");
+        readMeTitle = "Insert title here!"
     } else {
-        console.log("input detected!");
-    }
+        readMeTitle = `${input.title}`;
+        console.log(`${input.title}`);
+    };
+    readMeBlank.push(readMeTitle);
 }
 
 // TODO: Create a function to initialize app
