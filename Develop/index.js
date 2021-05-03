@@ -1,8 +1,9 @@
-/* Run the npm init -y then installed inquirer, npm i inquirer. */
-const inquirer = require('inquirer');
-const fs = require('fs');
+// TODO: Include packages needed for this application
+const inquirer = require("inquirer");
+const fs = require("fs");
 
-inquirer.prompt([
+// TODO: Create an array of questions for user input
+const questions = [
     {
         type: "input",
         name: "Project title",
@@ -50,5 +51,13 @@ inquirer.prompt([
         name: "Questions",
         message: "Questions on the project:",
     },
-])
+];
 
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {}
+
+// TODO: Create a function to initialize app
+function init() {}
+
+// Function call to initialize app
+init();
