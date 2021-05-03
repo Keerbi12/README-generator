@@ -101,8 +101,13 @@ function writeToFile(input) {
 
     let ReadMe = readMeBlank.join("\n");
     
-    var tester =  fs.readFileSync("../assets/README.md", "utf8");
-    console.log(tester)
+    fs.writeFileSync("../assets/README.md", ReadMe, function error() {
+        if (err) {
+            throw err;
+        } else {
+            console.log(`${title} README.md file generated succesfully`)
+        }
+    });
 }
 
 // TODO: Create a function to initialize app
