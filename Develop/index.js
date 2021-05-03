@@ -6,63 +6,90 @@ const fs = require("fs");
 const questions = [
     {
         type: "input",
-        name: "Project title",
+        name: "title",
         message: "Project title:",
     },
     {
         type: "input",
-        name: "Description",
+        name: "description",
         message: "A short description about your project:",
     },
     {
         type: "input",
-        name: "Table of contents",
+        name: "tableOfContents",
         message: "Table of contents for headings:",
     },
     {
         type: "input",
-        name: "Installation",
+        name: "installation",
         message: "Installation instructions:",
     },
     {
         type: "input",
-        name: "Usage",
+        name: "usage",
         message: "Usage information:",
     },
     /* using type = list allows me to write up an set of choices. */
     {
         type: "list",
-        name: "License",
+        name: "license",
         message: "Project license/licenses:",
         choices: ["license1", "license2", "license3", "license4"]
     },
     {
         type: "input",
-        name: "Contributing",
+        name: "contributing",
         message: "Contribution guidlines:",
     },
     {
         type: "input",
-        name: "Tests",
+        name: "tests",
         message: "Test instructions:",
     },
     {
         type: "input",
-        name: "Questions",
+        name: "questions",
         message: "Questions on the project:",
     }
 ];
 
-/* prompt which gets the array of objects (questions) stored within the "const questions".  */
+// prompt which gets the array of objects (questions) stored within the "const questions".  
 inquirer.prompt(
     questions
 )
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+// Created variables for each of the headings.
+    let readMeTitle;
+    let readMeDescription;
+    let readMeTable;
+    let readMeInstallation;
+    let readMeUsage;
+    let readMeLicense;
+    let readMeContributing;
+    let readMeTests;
+    let readMeQuestions;
+// Created constants that will become secondary headings as denoted by ##  
+    const descriptionDisplay = "## Description";
+    const tableDisplay = "## Table of Contents";
+    const installationDisplay = "## Installation instructions"; 
+    const usageDisplay = "## Usage information";
+    const licenseDisplay = "## License";
+    const contributingDisplay = "## Contribution guidlines";
+    const testsDisplay = "## Test instructions";
+    const questionsDisplay = "## Questions";
+
+    if (input.Description == "") {
+        console.log("No input detected!");
+    } else {
+        console.log("Info");
+    }
+}
 
 // TODO: Create a function to initialize app
 function init() {}
 
 // Function call to initialize app
 init();
+writeToFile()
