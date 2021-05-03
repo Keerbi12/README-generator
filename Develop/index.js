@@ -50,8 +50,13 @@ const questions = [
         type: "input",
         name: "Questions",
         message: "Questions on the project:",
-    },
+    }
 ];
+
+/* prompt which gets the array of objects (questions) stored within the "const questions".  */
+inquirer.prompt(
+    questions
+)
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
