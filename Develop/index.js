@@ -7,27 +7,27 @@ const questions = [
     {
         type: "input",
         name: "title",
-        message: "Project title:",
+        message: "Project title:"
     },
     {
         type: "input",
         name: "description",
-        message: "A short description about your project:",
+        message: "A short description about your project:"
     },
     {
         type: "input",
         name: "tableOfContents",
-        message: "Table of contents for headings:",
+        message: "Table of contents for headings:"
     },
     {
         type: "input",
         name: "installation",
-        message: "Installation instructions:",
+        message: "Installation instructions:"
     },
     {
         type: "input",
         name: "usage",
-        message: "Usage information:",
+        message: "Usage information:"
     },
     /* using type = list allows me to write up an set of choices. */
     {
@@ -39,17 +39,17 @@ const questions = [
     {
         type: "input",
         name: "contributing",
-        message: "Contribution guidlines:",
+        message: "Contribution guidlines:"
     },
     {
         type: "input",
         name: "tests",
-        message: "Test instructions:",
+        message: "Test instructions:"
     },
     {
         type: "input",
         name: "questions",
-        message: "Questions on the project:",
+        message: "Questions on the project:"
     }
 ];
 
@@ -57,9 +57,17 @@ const questions = [
 inquirer.prompt(
     questions
 )
+.then(
+    function start(connect) {
+        console.log("Inputs recieved")
+        writeToFile(connect)
+    }
+)
+.catch((err) => {console.log(err);})
+
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+function writeToFile(input) {
 // Created variables for each of the headings.
     let readMeTitle;
     let readMeDescription;
@@ -80,16 +88,17 @@ function writeToFile(fileName, data) {
     const testsDisplay = "## Test instructions";
     const questionsDisplay = "## Questions";
 
-    if (input.Description == "") {
+    if (input.title == "") {
         console.log("No input detected!");
     } else {
-        console.log("Info");
+        console.log("input detected!");
     }
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    
+}
 
 // Function call to initialize app
 init();
-writeToFile()
