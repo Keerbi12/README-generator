@@ -8,7 +8,7 @@ inquirer
         {
             type: "input",
             name: "Project title",
-            message: "What is your project title?:",
+            message: "Project title:",
         },
         {
             type: "input",
@@ -18,32 +18,34 @@ inquirer
         {
             type: "input",
             name: "Table of contents",
-            message: "Table of contents for your headings:",
+            message: "Table of contents for headings:",
         },
         {
             type: "input",
             name: "Installation",
-            message: "Project installation:",
+            message: "Installation instructions:",
         },
         {
             type: "input",
             name: "Usage",
-            message: "Project usage:",
+            message: "Usage information:",
         },
+        /* using type = list allows me to write up an set of choices. */
         {
-            type: "input",
+            type: "list",
             name: "License",
-            message: "Project license:",
+            message: "Project license/licenses:",
+            choices: ["license1", "license2", "license3", "license4"]
         },
         {
             type: "input",
             name: "Contributing",
-            message: "Project contributions:",
+            message: "Contribution guidlines:",
         },
         {
             type: "input",
             name: "Tests",
-            message: "Project tests:",
+            message: "Test instructions:",
         },
         {
             type: "input",
@@ -52,4 +54,3 @@ inquirer
         },
     ]
 )
-
