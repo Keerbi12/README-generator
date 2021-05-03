@@ -69,7 +69,7 @@ inquirer.prompt(
 // TODO: Create a function to write README file
 function writeToFile(input) {
 // Created variable for the creation of the README page
-    let readMeBlank;
+    let readMeBlank = [];
 // Created variables for each of the headings.
     let readMeTitle;
     let readMeDescription;
@@ -98,11 +98,15 @@ function writeToFile(input) {
         console.log(`${input.title}`);
     };
     readMeBlank.push(readMeTitle);
+
+    let ReadMe = readMeBlank.join("\n");
+    
+    var tester =  fs.readFileSync("../assets/README.md", "utf8");
+    console.log(tester)
 }
 
 // TODO: Create a function to initialize app
 function init() {
-    
 }
 
 // Function call to initialize app
